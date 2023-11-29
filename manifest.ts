@@ -7,7 +7,7 @@ import messageWorkFlow from "./workflows/message_workflow.ts";
 export default Manifest({
   name: "Kitchen duty bot",
   displayName: "Kitchen duty bot",
-  backgroundColor: "#FEE427",
+  backgroundColor: "#eecc00",
   description:
     "This bot will generate a list of people who are on dishwasher duty this week.",
   icon: "assets/logo.png",
