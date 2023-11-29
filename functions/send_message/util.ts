@@ -23,12 +23,10 @@ export const getMessage = async(client:SlackAPIClient, channel:string ) =>{
     });
 
     const excludedUsers = rotation.item.excluded;
-    console.log(excludedUsers)
     const currentWeek = moment().week();
 
     const channelUsers = await client.conversations.members({channel})
     const allowedChannelUsers = channelUsers.members.filter((user:any) => !excludedUsers.includes(user))
-    console.log(allowedChannelUsers)
     const users = await client.users.list();
 
     const selectedUserIds = getUsers(allowedChannelUsers, currentWeek);
@@ -70,7 +68,7 @@ export const messageConstructor = (users:any)=>[
             "type": "section",
             "text": {
                 "type": "mrkdwn",
-                "text": ":busts_in_silhouette: \t*Team on duty*\t:busts_in_silhouette:"
+                "text": ":busts_in_silhouette:\t*Team on duty*\t:busts_in_silhouette:"
             }
         },
         {
@@ -104,7 +102,7 @@ export const messageConstructor = (users:any)=>[
             "type": "section",
             "text": {
                 "type": "mrkdwn",
-                "text": ":soap: \t*Dish duty checklist*\t:soap:"
+                "text": ":soap:\t*Dish duty checklist*\t:soap:"
             }
         },
         {
