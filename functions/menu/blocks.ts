@@ -135,7 +135,7 @@ export const buildMenuForm = (rotation?: KitchenDutyRotation) => {
                 },
                 label: {
                     type: "plain_text",
-                    text: "Starting rotation",
+                    text: "📆  Starting rotation",
                     emoji: true,
                 },
             }
