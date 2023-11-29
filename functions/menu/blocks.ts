@@ -131,7 +131,7 @@ export const buildMenuForm = (rotation?: KitchenDutyRotation) => {
                 hint: {
                     type: "plain_text",
                     text:
-                        "If repeating weekly, the rotation will advance on selected weekday and time",
+                        "Please select a starting date in the future.",
                 },
                 label: {
                     type: "plain_text",
