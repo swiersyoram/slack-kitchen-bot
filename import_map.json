@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "deno-slack-sdk/": "https://deno.land/x/deno_slack_sdk@2.4.1/",
+    "deno-slack-api/": "https://deno.land/x/deno_slack_api@2.1.2/",
+    "momentjs/":"https://deno.land/x/momentjs@2.29.1-deno/"
+  }
+}
