@@ -94,7 +94,7 @@ export function getTriggerSchedule(debugMode: boolean, inputs: any) {
         return {
             start_time: time.toISOString(),
             frequency: {
-                type: "daily",
+                type: "weekly",
                 repeats_every: 1,
             },
         };
