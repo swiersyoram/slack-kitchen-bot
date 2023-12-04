@@ -5,7 +5,7 @@ import {getMessage} from "./util.ts";
 export default SlackFunction(sendMessageDefinition, async ({inputs, client}) => {
     await client.chat.postMessage({
         channel: inputs.channel,
-        blocks: await getMessage(client, inputs.channel),
+        blocks: await getMessage(client, inputs.channel, true),
         attachments: []
     })
 

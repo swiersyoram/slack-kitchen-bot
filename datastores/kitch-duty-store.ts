@@ -25,6 +25,15 @@ const KitchenDutyDatastore = DefineDatastore({
     start_time: {
       type: Schema.types.number,
     },
+    iteration:{
+        type: Schema.types.number,
+    },
+    last_rotation:{
+      type: Schema.types.array,
+      items: {
+        type: Schema.slack.types.user_id,
+      },
+    }
   },
 });
 

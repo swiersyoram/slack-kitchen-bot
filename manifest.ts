@@ -14,7 +14,7 @@ export default Manifest({
   datastores: [kitchDutyStore],
   workflows: [messageWorkFlow, menuWorkFlow],
   outgoingDomains: [],
-  botScopes: ["commands", "chat:write", "chat:write.public", "users:read", "usergroups:read", "channels:read","groups:read","mpim:read","im:read", "triggers:write" , "datastore:read", "datastore:write"],
+  botScopes: ["commands", "chat:write", "chat:write.public", "users:read", "usergroups:read", "channels:read","groups:read","mpim:read","im:read", "triggers:write" , "datastore:read", "datastore:write", "triggers:read"],
 
   features:{
     appHome: {

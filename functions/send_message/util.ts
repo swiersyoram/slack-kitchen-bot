@@ -1,20 +1,16 @@
-import { DefineFunction, Schema, SlackFunction } from 'deno-slack-sdk/mod.ts';
 import moment from "momentjs/mod.ts";
 import {SlackAPIClient} from "deno-slack-api/types.ts";
 import kitchDutyStore from "../../datastores/kitch-duty-store.ts";
 
 
 
-export const getUsers = (usersArray:any, currentWeek:number) => {
-  const usersPerWeek = 3;
-  const startIndex = (currentWeek - 1) * usersPerWeek;
-  const endIndex = startIndex + usersPerWeek;
-  const rotatedUsers = usersArray.slice(startIndex, endIndex).concat(usersArray.slice(0, startIndex));
-
-  return rotatedUsers.slice(0, usersPerWeek);
+export const getUsers = (usersArray:string[], iteration:number) => {
+    const startIndex = (iteration % Math.floor(usersArray.length / 3)) * 3;
+    const endIndex = startIndex + 3;
+    return usersArray.slice(startIndex, endIndex);
 }
 
-export const getMessage = async(client:SlackAPIClient, channel:string ) =>{
+export const getMessage = async(client:SlackAPIClient, channel:string, iterate: boolean ) =>{
     const rotation = await client.apps.datastore.get<
         typeof kitchDutyStore.definition
     >({
@@ -22,21 +18,61 @@ export const getMessage = async(client:SlackAPIClient, channel:string ) =>{
         id: channel,
     });
 
+    let iteration = iterate ? rotation.item.iteration + 1: rotation.item.iteration;
+
+
     const excludedUsers = rotation.item.excluded;
-    const currentWeek = moment().week();
 
     const channelUsers = await client.conversations.members({channel})
     const allowedChannelUsers = channelUsers.members.filter((user:any) => !excludedUsers.includes(user))
     const users = await client.users.list();
 
-    const selectedUserIds = getUsers(allowedChannelUsers, currentWeek);
+
+    let selectedUserIds:string[] = getUsers(allowedChannelUsers, iteration)
+    while(iterate && rotation.item.last_rotation[0] === selectedUserIds[0]){
+        ++iteration;
+        selectedUserIds = getUsers(allowedChannelUsers, iteration);
+    }
+
     const selectedUsers = users.members.filter((user:any) => selectedUserIds.includes(user.id))
 
-
-    // console.log(selectedUsers[0])
+    if(iterate){
+        rotation.item.iteration = iteration ;
+        rotation.item.last_rotation = selectedUserIds;
+        await client.apps.datastore.put<
+            typeof kitchDutyStore.definition
+        >({
+            datastore: kitchDutyStore.name,
+            item: rotation.item
+        });
+    }
 
     return messageConstructor(selectedUsers)
 }
+
+
+const greetings = [
+    "Hey Team Awesome Sauce!",
+    "Greetings, Earthlings of the Office Galaxy!",
+    "Salutations, Masters of the Cubicle Realm!",
+    "Hello, Office Rockstars and Keyboard Ninjas!",
+    "Dear Work-From-Homers and Office Olympians,",
+    "Hey Squad, Ready to Conquer the Work Jungle?",
+    "Greetings, Minions of the Coffee Machine Kingdom!",
+    "To the A-team: Assemble for another day of greatness!",
+    "Hello Fabulous Colleagues, Wizards of Work Wonders!",
+    "Hey Office Geniuses, let's make magic happen today!",
+    "Salute, Champions of the Corporate Arena!",
+    "Dear Work Pals, Unicorns of the Workplace Rainbow!",
+    "Hello Workmates, Guardians of the Office Galaxy!",
+    "Hey Dream Team, ready to turn coffee into code?",
+    "Greetings, Fellow Pirates of the Cubicle Sea!",
+    "Hello Legends, Masters of the Spreadsheet Symphony!",
+    "Hey Superstars, Defenders of the Office Fortress!",
+    "Dear Office Jedi, May the Productivity Force be with You!",
+    "Salutations, Pioneers of the Professional Playground!",
+    "Hey Colleagues, Avengers of Administrative Tasks!"
+]
 
 
 export const messageConstructor = (users:any)=>[
@@ -51,7 +87,7 @@ export const messageConstructor = (users:any)=>[
             "type": "section",
             "text": {
                 "type": "mrkdwn",
-                "text": "Hey besties! :dancers:\n It's time to keep our kitchen sparkling clean,\n and it's your turn in the dishwasher duty rotation."
+                "text": `${greetings[Math.floor(Math.random() * greetings.length)]} :dancers:\n It's time to keep our kitchen sparkling clean,\n and it's your turn in the dishwasher duty rotation.`
             }
         },
         {

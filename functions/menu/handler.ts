@@ -33,13 +33,13 @@ export default SlackFunction(
 
     await client.chat.postMessage({
         channel: inputs.channel,
-        blocks: await getMessage(client, inputs.channel),
+        blocks: await getMessage(client, inputs.channel, false),
         attachments: []
     })
     return {
         completed: false,
     }
-}).addBlockActionsHandler(["delete_rotation"], async ({inputs, client, body}) => {
+}).addBlockActionsHandler(["delete_rotation"], async ({inputs, client, body }) => {
 
     const { channel,  interactivity } = inputs;
 
@@ -51,7 +51,7 @@ export default SlackFunction(
     });
 
     await client.workflows.triggers.delete({
-        trigger_id: rotation.rotation_trigger_id,
+        "trigger_id": rotation.item.rotation_trigger_id,
     });
 
      await client.apps.datastore.delete<
