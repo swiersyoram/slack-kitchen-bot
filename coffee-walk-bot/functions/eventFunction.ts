@@ -38,7 +38,7 @@ export default SlackFunction(
             const channel = await client.conversations.open({
                 users: group.join(','),
             }).then(res => res?.channel?.id)
-            console.log(channel)
+
             await client.chat.postMessage({
                 channel,
                 blocks:[

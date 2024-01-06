@@ -37,7 +37,6 @@ export default SlackFunction(
     },
 )
     .addBlockActionsHandler(["delete_event"], async ({inputs, client, body }) => {
-        console.log('delete')
 
         const settings = await client.apps.datastore.get<
             typeof channelSettingsDataStore.definition
