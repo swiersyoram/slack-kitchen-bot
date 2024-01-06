@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="35fec25d-2d84-43c7-b232-5bfc4c6a3327" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/donut-bot/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donut-bot/.slack/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donut-bot/.vscode/settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donut-bot/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donut-bot/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donut-bot/assets/default_new_app_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donut-bot/datastores/sample_datastore.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donut-bot/deno.jsonc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donut-bot/functions/sample_function.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donut-bot/functions/sample_function_test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donut-bot/import_map.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donut-bot/manifest.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donut-bot/slack.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donut-bot/triggers/sample_trigger.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donut-bot/workflows/sample_workflow.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deno.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kitchen-duty-bot.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kitchen-duty-bot/import_map.json" beforeDir="false" afterPath="$PROJECT_DIR$/kitchen-duty-bot/import_map.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kitchen-duty-bot/slack.json" beforeDir="false" afterPath="$PROJECT_DIR$/kitchen-duty-bot/slack.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2aXwmatOzBV9ghy5qz8ihHgBD9q" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="35fec25d-2d84-43c7-b232-5bfc4c6a3327" name="Changes" comment="" />
+      <created>1704478391612</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1704478391612</updated>
+      <workItem from="1704478393156" duration="281000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

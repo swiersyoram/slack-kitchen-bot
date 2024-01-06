@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/made slack apps.iml" filepath="$PROJECT_DIR$/.idea/made slack apps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/kitchen-duty-bot.iml" filepath="$PROJECT_DIR$/.idea/kitchen-duty-bot.iml" />
     </modules>
   </component>
 </project>

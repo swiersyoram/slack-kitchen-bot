@@ -38,7 +38,7 @@ export  default SlackFunction(createRotationDefinition,async ({inputs, client})=
             "There was an error scheduling the trigger",
             newScheduledTriggerResp.error,
             newScheduledTriggerResp.response_metadata,
-        );
+        );☕️
         return {
             error: newScheduledTriggerResp.error ??
                 "Failed to create scheduled trigger",

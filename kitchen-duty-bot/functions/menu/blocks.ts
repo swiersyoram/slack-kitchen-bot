@@ -4,7 +4,6 @@ import {dateFromTimeInSec} from "../create_rotation/handler.ts";
 
 
 export const buildMenuForm = (rotation?: KitchenDutyRotation) => {
-    console.log('rotation', rotation)
     return ({
         "type": "modal",
         // Note that this ID can be used for dispatching view submissions and view closed events.
