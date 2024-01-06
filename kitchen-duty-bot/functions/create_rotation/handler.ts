@@ -34,11 +34,6 @@ export  default SlackFunction(createRotationDefinition,async ({inputs, client})=
     );
 
     if (!newScheduledTriggerResp.ok) {
-        console.log(
-            "There was an error scheduling the trigger",
-            newScheduledTriggerResp.error,
-            newScheduledTriggerResp.response_metadata,
-        );☕️
         return {
             error: newScheduledTriggerResp.error ??
                 "Failed to create scheduled trigger",
@@ -83,7 +78,6 @@ export function getTriggerSchedule(debugMode: boolean, inputs: any) {
     const { startTime } = inputs;
 
     if (debugMode) {
-        console.log("DEBUG MODE IS ON");
         const now = new Date();
         const delayInSeconds = now.getSeconds() + DELAY_SEC;
         const startTime = new Date(now.setSeconds(delayInSeconds));
