@@ -9,7 +9,7 @@ import channelSettingsDataStore from "./datastores/channelSettingsStore.ts";
  * https://api.slack.com/automation/manifest
  */
 export default Manifest({
-    name: "coffee walk bot",
+    name: "Coffee walk bot",
     displayName: "Coffee walk bot",
     description: "This bot will put 3 people together in a channel to have a drink and get to know each other, every month.",
     icon: "assets/app_icon.png",

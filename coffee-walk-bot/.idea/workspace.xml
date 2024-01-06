@@ -5,43 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff1a9288-4cdb-4a1c-af53-f444f2a8498b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/.slack/apps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/.slack/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/Views/menuView.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/assets/app_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/assets/default_new_app_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/datastores/channelSettingsStore.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/deno.jsonc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/functions/eventFunction.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/functions/menuFunction.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/functions/saveMenuSettingsFunction.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/import_map.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/manifest.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/slack.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/triggers/manualEventTrigger.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/triggers/menuTrigger.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/util/array.util.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/util/time.util.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/workflows/eventWorkflow.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coffee-walk-bot/workflows/menuWorkflow.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kitchen-duty-bot/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kitchen-duty-bot/.idea/deno.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kitchen-duty-bot/.idea/kitchen-duty-bot.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kitchen-duty-bot/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kitchen-duty-bot/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/deno.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../coffee-walk-bot/.idea/deno.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/kitchen-duty-bot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../coffee-walk-bot/.idea/coffee-walk-bot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../coffee-walk-bot/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen-duty-bot/functions/create_rotation/handler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen-duty-bot/functions/create_rotation/handler.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen-duty-bot/functions/menu/blocks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen-duty-bot/functions/menu/blocks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen-duty-bot/import_map.json" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen-duty-bot/import_map.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen-duty-bot/slack.json" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen-duty-bot/slack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../coffee-walk-bot/manifest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../coffee-walk-bot/manifest.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +57,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1704533130723</updated>
-      <workItem from="1704533132045" duration="11817000" />
+      <workItem from="1704533132045" duration="12110000" />
     </task>
     <servers />
   </component>
