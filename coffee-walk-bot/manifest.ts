@@ -31,6 +31,7 @@ export default Manifest({
         "datastore:read",
         "datastore:write",
         "triggers:read",
-        "triggers:write"
+        "triggers:write",
+        "users:read"
     ],
 });

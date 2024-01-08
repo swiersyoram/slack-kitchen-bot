@@ -30,13 +30,15 @@ export default SlackFunction(
         }).then(res=>res?.item)
 
 
-        const users = await client.conversations.members({  channel: inputs.channel }).then(res => res.members)
+        const users = await client.users.list();
+        const channelUsers = await client.conversations.members({channel:inputs.channel}).then((res:any) => res.members.map((member:any) => users.members.find((user:any) => user.id === member)))
+        const allowedChannelUsers = channelUsers.filter((user:any) => !channelSettings?.excluded?.includes(user.id) && !user.is_bot)
 
-        const groups = getEventGroups(users.filter((user:string) => !channelSettings?.excluded.includes(user)))
+        const groups = getEventGroups(allowedChannelUsers)
 
         for (const group of groups) {
             const channel = await client.conversations.open({
-                users: group.join(','),
+                users: group.map((u:any)=>u.id).join(','),
             }).then(res => res?.channel?.id)
 
             await client.chat.postMessage({
@@ -72,12 +74,12 @@ export default SlackFunction(
                                     {
                                         "type": "rich_text_list",
                                         "style": "bullet",
-                                        "elements": group.map((user:string) => ({
+                                        "elements": group.map(({id}:any) => ({
                                             "type": "rich_text_section",
                                             "elements": [
                                                 {
                                                     "type": "user",
-                                                    "user_id": user
+                                                    "user_id": id
                                                 },
                                             ]
                                         }))
