@@ -1,6 +1,6 @@
 import moment from "momentjs/mod.ts";
 import {SlackAPIClient} from "deno-slack-api/types.ts";
-import kitchDutyStore from "../../datastores/kitch-duty-store.ts";
+import kitchenDutyStore from "../../datastores/kitch-duty-store.ts";
 
 
 export const getUsers = (usersArray:string[], iteration:number) => {
@@ -11,9 +11,9 @@ export const getUsers = (usersArray:string[], iteration:number) => {
 
 export const getMessage = async(client:SlackAPIClient, channel:string, iterate: boolean ) =>{
     const rotation = await client.apps.datastore.get<
-        typeof kitchDutyStore.definition
+        typeof kitchenDutyStore.definition
     >({
-        datastore: kitchDutyStore.name,
+        datastore: kitchenDutyStore.name,
         id: channel,
     });
 
@@ -22,25 +22,23 @@ export const getMessage = async(client:SlackAPIClient, channel:string, iterate: 
 
     const excludedUsers = rotation.item.excluded;
 
-    const channelUsers = await client.conversations.members({channel})
-    const allowedChannelUsers = channelUsers.members.filter((user:any) => !excludedUsers.includes(user))
     const users = await client.users.list();
+    const channelUsers = await client.conversations.members({channel}).then((res:any) => res.members.map((member:any) => users.members.find((user:any) => user.id === member)))
+    const allowedChannelUsers = channelUsers.filter((user:any) => !excludedUsers.includes(user.id) && !user.is_bot)
 
-    let selectedUserIds:string[] = getUsers(allowedChannelUsers, iteration)
-    while(iterate && rotation.item.last_rotation[0] === selectedUserIds[0]){
+    let selectedUsers:string[] = getUsers(allowedChannelUsers, iteration)
+    while(iterate && rotation.item.last_rotation[0] === selectedUsers[0]){
         ++iteration;
-        selectedUserIds = getUsers(allowedChannelUsers, iteration);
+        selectedUsers = getUsers(allowedChannelUsers, iteration);
     }
-
-    const selectedUsers = users.members.filter((user:any) => selectedUserIds.includes(user.id) && !user.is_bot)
 
     if(iterate){
         rotation.item.iteration = iteration ;
-        rotation.item.last_rotation = selectedUserIds;
+        rotation.item.last_rotation = selectedUsers.map((user:any) => user.id);
         await client.apps.datastore.put<
-            typeof kitchDutyStore.definition
+            typeof kitchenDutyStore.definition
         >({
-            datastore: kitchDutyStore.name,
+            datastore: kitchenDutyStore.name,
             item: rotation.item
         });
     }

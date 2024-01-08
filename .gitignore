@@ -3,4 +3,3 @@ package
 .DS_Store
 .slack/apps.dev.json
 *.idea
-*.slack
