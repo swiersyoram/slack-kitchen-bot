@@ -3,9 +3,8 @@ import {SlackAPIClient} from "deno-slack-api/types.ts";
 import kitchDutyStore from "../../datastores/kitch-duty-store.ts";
 
 
-
 export const getUsers = (usersArray:string[], iteration:number) => {
-    const startIndex = (iteration % Math.floor(usersArray.length / 3)) * 3;
+    const startIndex = (iteration % Math.floor(usersArray.length / 3) || 0) * 3;
     const endIndex = startIndex + 3;
     return usersArray.slice(startIndex, endIndex);
 }
@@ -27,14 +26,13 @@ export const getMessage = async(client:SlackAPIClient, channel:string, iterate: 
     const allowedChannelUsers = channelUsers.members.filter((user:any) => !excludedUsers.includes(user))
     const users = await client.users.list();
 
-
     let selectedUserIds:string[] = getUsers(allowedChannelUsers, iteration)
     while(iterate && rotation.item.last_rotation[0] === selectedUserIds[0]){
         ++iteration;
         selectedUserIds = getUsers(allowedChannelUsers, iteration);
     }
 
-    const selectedUsers = users.members.filter((user:any) => selectedUserIds.includes(user.id))
+    const selectedUsers = users.members.filter((user:any) => selectedUserIds.includes(user.id) && !user.is_bot)
 
     if(iterate){
         rotation.item.iteration = iteration ;

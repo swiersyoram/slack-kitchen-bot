@@ -45,8 +45,8 @@ export  default SlackFunction(createRotationDefinition,async ({inputs, client})=
         channel: inputs.channel,
         start_time: inputs.startTime,
         excluded: inputs.excludedUsers,
-        iteration: 0,
-        last_rotation: []
+        iteration: channelGetResp.item.iteration ?? 0,
+        last_rotation: channelGetResp.item.last_rotation ?? []
     };
 
     await client.apps.datastore.put<
